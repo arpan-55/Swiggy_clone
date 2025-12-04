@@ -1,39 +1,69 @@
-*{
+/* =============================
+    GLOBAL RESET
+   ============================= */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.navbar{
-    height: 120px;
+
+/* Common input styles */
+input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+/* =============================
+    NAVBAR SECTION
+   ============================= */
+.navbar {
+    height: 118px;
+    width: 100%;
     background-color: orangered;
     color: white;
+
+    /* Navbar items vertically centered */
     display: flex;
     align-items: center;
 }
-.nav-logo{
+
+/* Swiggy logo container */
+.nav-logo {
     width: 160px;
     height: 54px;
 
+    /* Move logo right side */
+    transform: translateX(127px);
 }
-.logo{
+
+/* Logo image */
+.logo {
     background-image: url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/static-assets/images/swiggy_logo_white.png");
     width: 100%;
     height: 48px;
     background-size: cover;
 }
-.nav-items{
+
+/* Navbar right-side items (Get the App / Sign in) */
+.nav-items {
     height: 54px;
     display: flex;
     align-items: center;
     gap: 20px;
+
+    /* Move group to the left */
     margin-left: auto;
     margin-right: 20px;
+    transform: translateX(-127px);
 }
-.get-the-app{
+
+/* "Get the App" button */
+.get-the-app {
     display: flex;
     background-color: transparent;
     height: 54px;
-    width: 150px;
+    width: 149px;
     border: 2px solid white;
     border-radius: 16px;
     font-size: 16px;
@@ -42,12 +72,15 @@
     cursor: pointer;
     gap: 1px;
 }
-.tilted-arrow{
+
+/* Arrow icon tilt effect */
+.tilted-arrow {
     transform: rotate(-45deg);
     transform-origin: center;
 }
 
-.sign-in{
+/* "Sign In" button */
+.sign-in {
     display: flex;
     background-color: black;
     height: 54px;
@@ -57,5 +90,161 @@
     font-size: 16px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+
+/* =============================
+    FIRST SECTION (Below Navbar)
+   ============================= */
+.first-section {
+    height: 292px;
+    width: 100%;
+    background-color: orangered;
+
+    /* Image1, Middle Box, Image2 aligned horizontally */
+    display: flex;
+
+    /* Positioned under navbar */
+    position: absolute;
+}
+
+/* Left-side vegetable image */
+.image1 {
+    width: 250px;
+    height: 450px;
+    background-image: url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Veggies_new.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Right-side sushi image */
+.image2 {
+    width: 250px;
+    height: 450px;
+    background-image: url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Sushi_replace.png");
+    background-size: cover;
+    background-position: center;
+
+    /* Push to extreme right */
+    margin-left: auto;
+
+    /* Make image appear above middle-box */
+    position: relative;
+    z-index: 999;
+}
+
+/* Middle content wrapper */
+.middle-box {
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+/* =============================
+    GRID LAYOUT INSIDE MIDDLE BOX
+   ============================= */
+.grid-box1 {
+    display: grid;
+
+    /* 2 equal columns for row 2 */
+    grid-template-columns: 1fr 1fr;
+
+    /* Two rows (text row + inputs row) */
+    grid-template-rows: auto auto;
+
+    /* Space between items */
+    gap: 20px;
+}
+
+/* =============================
+    TEXT SECTION INSIDE GRID
+   ============================= */
+.text1 {
+    /* Full row span (1st row) */
+    grid-column: 1 / 3;
+
+    /* Align text perfectly centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* Typography */
+    font-family: gilroy, sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+
+    height: 112px;
+    width: 743px;
+
+    color: white;
+
+    /* Top space + center horizontally */
+    margin: 64px auto 0;
+}
+
+/* =============================
+    FIRST INPUT (Location Box)
+   ============================= */
+.input-location {
+    width: 306px;
+    height: 58px;
+    background-color: white;
+    border-radius: 8px;
+
+    /* Align icon, text, arrow */
+    display: flex;
+    margin: auto;
+}
+
+/* Location icon spacing */
+.icon-location {
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    margin-top: 20px;
+}
+
+#inputbox1 {
+    margin-left: 4px;
+    width: 208px;
+}
+
+/* Dropdown arrow */
+.dropdown-btn {
+    width: 32px;
+    height: 32px;
+    margin-top: 13px;
+    margin-left: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* =============================
+    SECOND INPUT (Search Box)
+   ============================= */
+.input-item {
+    width: 484px;
+    height: 58px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+}
+
+#inputbox2 {
+    margin-left: 16px;
+    width: 273px;
+}
+
+/* Search button */
+.search-btn {
+    width: 32px;
+    height: 32px;
+    margin-top: 13px;
+    margin-left: auto;
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
     cursor: pointer;
 }
